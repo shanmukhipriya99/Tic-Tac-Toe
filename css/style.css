@@ -54,7 +54,7 @@ body {
 
 .header {
     display: flex;
-    color: rgba(9, 9, 6, 0.493);
+    color: rgba(9, 9, 6, 0.307);
     font-size: 24px;
     font-weight: bold;
 }
@@ -69,4 +69,14 @@ body {
     flex: 1;
     border-bottom: 5px solid;
     padding-bottom: 10px;
+}
+
+.player-x.active {
+    color: brown;
+    border-color: brown;
+}
+
+.player-o.active {
+    color:rgb(56, 122, 124);
+    border-color: rgb(56, 122, 124);
 }
