@@ -19,6 +19,12 @@ body {
     margin: 0 auto;
 }
 
+.title {
+    font-size: 70px;
+    font-weight: bold;
+    max-width: 500px;
+}
+
 .restart {
     border: 2px solid rgb(30, 23, 12);
     border-radius: 40px;
