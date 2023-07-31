@@ -44,3 +44,29 @@ body {
     transform: scale(1.3, 1.3);
     transition: all 1s ease;
 }
+
+.game {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    color: rgba(9, 9, 6, 0.493);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.player-x {
+    flex: 1;
+    border-bottom: 5px solid;
+    padding-bottom: 10px;
+}
+
+.player-o {
+    flex: 1;
+    border-bottom: 5px solid;
+    padding-bottom: 10px;
+}
