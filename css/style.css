@@ -57,6 +57,7 @@ body {
     color: rgba(9, 9, 6, 0.307);
     font-size: 24px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .player-x {
@@ -79,4 +80,32 @@ body {
 .player-o.active {
     color:rgb(56, 122, 124);
     border-color: rgb(56, 122, 124);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    
+}
+
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    cursor: pointer;
+    background: rgba(136, 120, 99, 0.206);
+}
+
+.tile:not(:nth-last-child(-n + 3)) {
+    border-bottom: 3px solid rgb(20, 28, 35);
+}
+
+.tile:not(:nth-child(3n)) {
+    border-right: 3px solid rgb(20, 28, 35);
+}
+
+.tile:hover {
+    background: rgba(136, 120, 99, 0.628);
 }
