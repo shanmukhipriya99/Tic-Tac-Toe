@@ -35,6 +35,10 @@ function updateView() {
   for (let i = 0; i < board.length; i++) {
     let tile = document.querySelector(`.tile[data-index="${i}"]`);
     tile.textContent = board[i];
+    let tileType = board[i] === 'X' ? 'tile-x' : 'tile-o';
+    tile.innerHTML = `<span class="${tileType}"> ${
+      board[i] ? board[i] : ''
+    } </span>`;
   }
 }
 // update turn
@@ -64,6 +68,7 @@ function findWinningCombs() {
   for (const comb of winningCombs) {
     const [a, b, c] = comb;
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+      winner = turn;
       return comb;
     }
   }
