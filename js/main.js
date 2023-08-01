@@ -7,4 +7,11 @@ function newGame() {
   turn = 'X';
   winner = null;
 }
-
+// next turn
+function nextTurn() {
+  if (turn == 'X') {
+    turn = 'O';
+  } else {
+    turn = 'X';
+  }
+}
