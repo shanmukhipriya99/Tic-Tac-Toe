@@ -17,6 +17,9 @@ function nextTurn() {
 }
 // make move
 function makeMove(i) {
+  if (findWinningCombs()) {
+    return;
+  }
   if (board[i]) {
     return;
   }
@@ -58,12 +61,12 @@ function findWinningCombs() {
     [0, 4, 8],
     [6, 4, 2],
   ];
-  winningCombs.forEach((winningComb) => {
-    const [a, b, c] = winningComb;
-    if (board[a] && board[a] == board[b] && board[a] == board[c]) {
-      return winningComb;
+  for (const comb of winningCombs) {
+    const [a, b, c] = comb;
+    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+      return comb;
     }
-  });
+  }
   return null;
 }
 // handle tile click
