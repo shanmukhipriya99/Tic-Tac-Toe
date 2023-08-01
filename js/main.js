@@ -6,6 +6,7 @@ function newGame() {
   board = new Array(9).fill(null);
   turn = 'X';
   winner = null;
+  updateView();
 }
 // next turn
 function nextTurn() {
@@ -32,13 +33,24 @@ function makeMove(i) {
 // update view
 function updateView() {
   updateTurn();
+  let gameOver = findWinningCombs();
   for (let i = 0; i < board.length; i++) {
     let tile = document.querySelector(`.tile[data-index="${i}"]`);
     tile.textContent = board[i];
+    tile.classList.remove('winner');
     let tileType = board[i] === 'X' ? 'tile-x' : 'tile-o';
     tile.innerHTML = `<span class="${tileType}"> ${
       board[i] ? board[i] : ''
     } </span>`;
+    if (gameOver && gameOver.includes(i)) {
+      tile.classList.add('winner');
+    }
+  }
+  if (gameOver) {
+    document.querySelector(`.player-${winner}`).classList.add('win');
+  } else {
+    document.querySelector(`.player-x`).classList.remove('win');
+    document.querySelector(`.player-o`).classList.remove('win');
   }
 }
 // update turn
@@ -68,7 +80,7 @@ function findWinningCombs() {
   for (const comb of winningCombs) {
     const [a, b, c] = comb;
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      winner = turn;
+      winner = turn.toLowerCase();
       return comb;
     }
   }
