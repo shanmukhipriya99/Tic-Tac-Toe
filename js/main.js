@@ -15,3 +15,11 @@ function nextTurn() {
     turn = 'X';
   }
 }
+// make move
+function makeMove(i) {
+  board[i] = turn;
+  let winningComb = findWinningCombs();
+  if (!winningComb) {
+    nextTurn();
+  }
+}
