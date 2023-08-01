@@ -17,6 +17,9 @@ function nextTurn() {
 }
 // make move
 function makeMove(i) {
+  if (board[i]) {
+    return;
+  }
   board[i] = turn;
   let winningComb = findWinningCombs();
   if (!winningComb) {
@@ -75,4 +78,4 @@ function onClickHandler(ind) {
   updateView();
 }
 
-
+newGame();
