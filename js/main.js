@@ -23,3 +23,11 @@ function makeMove(i) {
     nextTurn();
   }
 }
+// update view
+function updateView() {
+  updateTurn();
+  for (let i = 0; i < board.length; i++) {
+    let tile = document.querySelector(`.tile[data-index="${i}"]`);
+    tile.textContent = board[i];
+  }
+}
