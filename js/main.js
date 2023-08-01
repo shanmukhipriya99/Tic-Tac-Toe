@@ -80,5 +80,10 @@ function onClickHandler(ind) {
   makeMove(ind);
   updateView();
 }
+// restart the game
+document.querySelector('.restart').addEventListener('click', () => {
+  newGame();
+  updateView();
+});
 
 newGame();
