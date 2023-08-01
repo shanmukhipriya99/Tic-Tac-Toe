@@ -63,3 +63,16 @@ function findWinningCombs() {
   });
   return null;
 }
+// handle tile click
+let tiles = document.querySelectorAll('.tile');
+tiles.forEach((tile, ind) => {
+  tile.addEventListener('click', () => {
+    onClickHandler(ind);
+  });
+});
+function onClickHandler(ind) {
+  makeMove(ind);
+  updateView();
+}
+
+
